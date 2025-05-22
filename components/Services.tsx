@@ -268,7 +268,7 @@ const Services = () => {
                 </div>
               )}
 
-              <button className="mt-6 w-full py-2 bg-red-50 text-red-600 font-medium rounded-md hover:bg-[#e91e63] transition-colors cursor-pointer">
+              <button className="mt-6 w-full py-2 bg-red-50 text-red-600 font-medium rounded-md hover:bg-[#e91e63] hover:text-white transition-colors cursor-pointer">
                 Book Now
               </button>
             </div>
