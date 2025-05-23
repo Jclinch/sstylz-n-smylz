@@ -1,68 +1,4 @@
-// "use client";
 
-// import React from "react";
-// import { Button } from "@/components/ui/button";
-// import { MotionDiv } from "@/components/ui/motion-div";
-// import Image from "next/image";
-// import Link from "next/link";
-// import SocialSidebar from "./ui/SocialSidebar";
-
-// const Hero = () => {
-//   return (
-//     <section className="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
-//       {/* Background image */}
-//       <Image
-//         src="/images/hero-bg.jpg"
-//         alt="Salon Background"
-//         fill
-//         className="object-cover z-0"
-//         priority
-//       />
-
-//       {/* Gradient overlay with knockout group */}
-//       <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/70 via-pink-800/60 to-black/70 flex items-center justify-center isolate">
-//         {/* Knockout Text */}
-//         <h1
-//   className="text-[3.5rem] md:text-[5rem] font-extrabold leading-tight text-transparent bg-clip-text z-20"
-//   style={{
-//     backgroundImage: "transparent",
-//     backgroundSize: "100% 100%",
-//     backgroundRepeat: "no-repeat",
-//     WebkitBackgroundClip: "text",
-//     backgroundClip: "text", // for Firefox
-//   }}
-// >
-//   Sstylz & Smylz
-// </h1>
-
-//       </div>
-
-//       {/* Motion content on top */}
-//       <MotionDiv
-//         initial={{ opacity: 0, y: 30 }}
-//         animate={{ opacity: 1, y: 0 }}
-//         transition={{ duration: 1 }}
-//         className="absolute bottom-24 z-30 w-full px-4"
-//       >
-//         {/* Subtext */}
-//         <div className="mt-6 px-6 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-md text-white text-lg max-w-2xl mx-auto">
-//           Luxury beauty services: Hair, Nails, Lashes, Wellness & more.
-//         </div>
-
-//         {/* Button */}
-//         <div className="mt-8 text-center">
-//           <Button size="lg" asChild>
-//             <Link href="/booking">Book Now</Link>
-//           </Button>
-//         </div>
-//       </MotionDiv>
-
-//       <SocialSidebar />
-//     </section>
-//   );
-// };
-
-// export default Hero;
 
 "use client";
 
@@ -119,7 +55,7 @@ const Hero = () => {
                 lineHeight: "0.85",
               }}
             >
-              Sstylz & Smylz
+              Stylz &apos;n&apos; Smylz
             </h1>
           </MotionDiv>
         </div>

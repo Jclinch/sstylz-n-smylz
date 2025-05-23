@@ -1,8 +1,8 @@
 export const defaultSEO = {
-    title: "Sstylz n Smylz",
-    titleTemplate: "%s | Sstylznsmylz",
+    title: "Stylz 'n' Smylz",
+    titleTemplate: "%s | Stylznsmylz",
     description: "Luxury hairstyling, nails, lashes, skincare and massage services.",
-    url: "https://sstylznsmylz.com",
+    url: "https://stylznsmylz.com",
     image: "/images/hero.jpg"
   }
   

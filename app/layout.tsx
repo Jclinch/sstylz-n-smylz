@@ -41,7 +41,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Sstylz n Smylz",
+  title: "Stylz 'n' Smylz",
   description: "Your luxury destination for Hair, Nails, Lashes & Wellness",
 };
 

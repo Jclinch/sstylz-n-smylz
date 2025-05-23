@@ -28,7 +28,7 @@ export default function NavBar() {
         <Link href="/" className="flex items-center">
           <Image
             src="/images/logo.png"
-            alt="Sstylz n Smylz Logo"
+            alt="Stylz 'n' Smylz Logo"
             width={60}
             height={50}
             className=""
