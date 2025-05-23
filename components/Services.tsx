@@ -207,9 +207,9 @@ const Services = () => {
         <h4 className="font-extrabold tracking-tight text-gray-900">
           Where Beauty Meets Perfection!
         </h4>
-        <h2 className="text-4xl font-bold tracking-tight">STYLZ N SMLYZ</h2>
+        <h2 className="text-4xl font-bold tracking-tight">STYLZ &apos;n&apos; SMLYZ</h2>
         <p className="mt-4 text-lg text-gray-600">
-          Welcome to STYLZ N SMLYZ, your ultimate destination for premium hair
+          Welcome to STYLZ &apos;n&apos; SMLYZ, your ultimate destination for premium hair
           and beauty services in Lekki, Ikota, Lagos. We specialize in
           transforming your look with expert hairstyling, professional beauty
           treatments, and a luxurious salon experience tailored for both men and
