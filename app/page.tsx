@@ -18,7 +18,7 @@ export default function HomePage() {
         <h2 className="text-3xl font-bold text-pink-700 mb-6">
           Ready for Your Glow-Up?
         </h2>
-        <Button asChild size="lg">
+        <Button asChild size="lg" className="rounded-full">
           <Link href="/booking">Book Your Appointment</Link>
         </Button>
       </section>

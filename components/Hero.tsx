@@ -132,7 +132,7 @@ const Hero = () => {
         transition={{ duration: 1 }}
         className="absolute bottom-24 z-30 w-full px-4"
       >
-        <div className="mt-6 px-6 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-md text-white text-lg max-w-2xl mx-auto">
+        <div className="mt-6 px-6 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl text-white text-lg max-w-2xl mx-auto">
           Luxury beauty services: Hair, Nails, Lashes, Wellness & more.
         </div>
 
@@ -140,7 +140,7 @@ const Hero = () => {
           <Button
             size="lg"
             asChild
-            className="bg-white/90 hover:bg-white text-pink-900 hover:text-pink-950 font-semibold shadow-lg"
+            className="bg-white/90 hover:bg-white text-pink-900 hover:text-pink-950 font-semibold shadow-lg rounded-3xl"
           >
             <Link href="/booking">Book Now</Link>
           </Button>

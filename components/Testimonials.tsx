@@ -121,7 +121,7 @@ const Testimonials = () => {
         className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-center relative z-10"
       >
         {/* Rotating frame + Client image */}
-        <div className="relative w-[600px] h-[600px] flex items-center justify-center">
+        <div className="relative md:w-[600px] w-[300px] md:h-[600px] h-[300px] flex items-center justify-center">
           <div className="absolute inset-0 animate-spin-slow z-0">
             <Image
               src="/images/gold-frame.png"
@@ -130,7 +130,7 @@ const Testimonials = () => {
               className="object-contain"
             />
           </div>
-          <div className="w-[420px] h-[420px] rounded-full overflow-hidden shadow-2xl relative z-10">
+          <div className="md:w-[420px] w-[210px] md:h-[420px] h-[210px] rounded-full overflow-hidden shadow-2xl relative z-10">
             <Image
               src={testimonial.image}
               alt={testimonial.name}
@@ -142,7 +142,7 @@ const Testimonials = () => {
 
         {/* Testimonial Content */}
         <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
-          <h2 className="text-4xl font-bold text-gray-800">What Our Clients Say</h2>
+          <h2 className="md:text-4xl text-xl font-bold text-gray-800">What Our Clients Say</h2>
           <p className="text-lg italic text-gray-600 leading-relaxed">
             “{testimonial.quote}”
           </p>

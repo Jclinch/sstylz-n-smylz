@@ -10,7 +10,7 @@ const Footer = () => {
         {/* Contact Info */}
         <div>
           <h3 className="text-xl font-semibold mb-2">Contact Us</h3>
-          <p className="mb-1">🌸 Radiant Glow Beauty Salon</p>
+          <p className="mb-1">🌸 Sstylz & ssmylz Beauty Salon</p>
           <p className="mb-1">📍 123 Blossom Street, Beautyville</p>
           <p className="mb-1">📞 (123) 456-7890</p>
           <p>📧 info@radiantglow.com</p>
@@ -30,7 +30,7 @@ const Footer = () => {
 
       {/* Bottom note */}
       <div className="text-center text-sm text-gray-500 mt-8">
-        © {new Date().getFullYear()} Radiant Glow Beauty Salon. All rights reserved.
+        © {new Date().getFullYear()} Sstylz & ssmylz Beauty Salon. All rights reserved.
       </div>
     </footer>
   );
