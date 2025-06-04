@@ -123,10 +123,15 @@ const Services = () => {
       className="py-12 sm:py-20 px-4 sm:px-6 bg-white text-gray-900 relative z-20 overflow-hidden"
     >
       {/* Floating background patterns */}
-      <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+      <div
+        className="pointer-events-none absolute inset-0 z-0"
+        aria-hidden="true"
+      >
         {patterns.map((pattern) => {
-          const moveX = (relCursor.x - 0.5) * 60 * (pattern.id % 2 === 0 ? 1 : -1);
-          const moveY = (relCursor.y - 0.5) * 60 * (pattern.id % 2 === 1 ? 1 : -1);
+          const moveX =
+            (relCursor.x - 0.5) * 60 * (pattern.id % 2 === 0 ? 1 : -1);
+          const moveY =
+            (relCursor.y - 0.5) * 60 * (pattern.id % 2 === 1 ? 1 : -1);
           const style: React.CSSProperties = {
             position: "absolute",
             top: `calc(${pattern.top}% + ${moveY}px)`,
@@ -168,7 +173,12 @@ const Services = () => {
             );
           } else {
             return (
-              <svg key={pattern.id} style={style} viewBox="0 0 100 100" fill="none">
+              <svg
+                key={pattern.id}
+                style={style}
+                viewBox="0 0 100 100"
+                fill="none"
+              >
                 <polygon
                   points="50,10 90,90 10,90"
                   fill={pattern.color}
@@ -207,11 +217,13 @@ const Services = () => {
         <h4 className="font-extrabold tracking-tight text-gray-900">
           Where Beauty Meets Perfection!
         </h4>
-        <h2 className="text-4xl font-bold tracking-tight">STYLZ &apos;n&apos; SMLYZ</h2>
+        <h2 className="text-4xl font-bold tracking-tight">
+          STYLZ &apos;n&apos; SMLYZ
+        </h2>
         <p className="mt-4 text-lg text-gray-600">
-          Welcome to STYLZ &apos;n&apos; SMLYZ, your ultimate destination for premium hair
-          and beauty services in Lekki, Ikota, Lagos. We specialize in
-          transforming your look with expert hairstyling, professional beauty
+          Welcome to STYLZ &apos;n&apos; SMLYZ, your ultimate destination for
+          premium hair and beauty services in Lekki, Ikota, Lagos. We specialize
+          in transforming your look with expert hairstyling, professional beauty
           treatments, and a luxurious salon experience tailored for both men and
           women.
         </p>
@@ -222,7 +234,7 @@ const Services = () => {
         initial={{ opacity: 0, y: 40 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.01, delay: 0.01 }}
-className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pb-8 max-w-7xl mx-auto mt-10 px-4"
+        className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pb-8 max-w-7xl mx-auto mt-10 px-4"
       >
         {services.map((service, idx) => (
           <MotionDiv
@@ -263,11 +275,13 @@ className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pb-8 max-w-7xl mx-auto
                       key={i}
                       className="flex justify-between text-sm font-medium"
                     >
-                      <span className="text-gray-500 text-[8px] md:text-sm">DURATION:</span>
-                        <span className="text-red-500 font-bold text-[8px] md:text-sm">
+                      <span className="text-gray-500 text-[8px] md:text-sm">
+                        DURATION:
+                      </span>
+                      <span className="text-red-500 font-bold text-[8px] md:text-sm">
                         {duration}
                         <br className="md:block hidden" />
-                        </span>
+                      </span>
                     </div>
                   ))}
                 </div>

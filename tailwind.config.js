@@ -1,6 +1,10 @@
 module.exports = {
     theme: {
       extend: {
+         fontFamily: {
+        italiana: ['var(--font-italiana)', 'serif'],
+        karla: ['var(--font-karla)', 'sans-serif'],
+      },
         animation: {
           gradient: "gradientBG 8s ease infinite",
            "spin-slow": "spin 12s linear infinite",

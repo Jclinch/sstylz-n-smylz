@@ -22,7 +22,7 @@ export default function NavBar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white shadow-md">
+    <header className="sticky top-0 z-50 w-full bg-none shadow-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center">
@@ -41,7 +41,7 @@ export default function NavBar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors"
+              className="text-sm font-medium text-white hover:text-pink-600 transition-colors"
             >
               {link.name}
             </Link>

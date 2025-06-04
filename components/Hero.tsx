@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import React from "react";
@@ -11,15 +9,18 @@ import SocialSidebar from "./ui/SocialSidebar";
 
 const Hero = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
+    <section className=" karla relative h-screen flex items-center justify-center text-center px-4 overflow-hidden pt-[100px] mt-[-100px]">
       {/* Background image - ensure this has enough contrast */}
-      <Image
-        src="/images/hero-bg.jpg"
-        alt="Salon Background"
-        fill
-        className="object-cover z-0 brightness-75 contrast-125"
-        priority
-      />
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero-bg1.png"
+          alt="Salon Background"
+          fill
+          className="object-cover w-full h-full"
+          priority
+          sizes="100vw"
+        />
+      </div>
 
       {/* Semi-transparent overlay for better text contrast */}
       <div className="absolute inset-0 z-10 bg-black/30 flex items-center justify-center">
@@ -42,7 +43,7 @@ const Hero = () => {
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
             <h1
-              className="text-[4rem] md:text-[6rem] font-black leading-none uppercase tracking-tighter text-transparent bg-clip-text animate-gradient"
+              className="italiana text-[4rem] md:text-[6rem] font-black leading-none  tracking-tighter text-transparent bg-clip-text animate-gradient"
               style={{
                 backgroundImage:
                   "linear-gradient(270deg, rgba(255,255,255,0.8), rgba(255,255,255,0.4), rgba(255,255,255,0.8))",
@@ -55,7 +56,7 @@ const Hero = () => {
                 lineHeight: "0.85",
               }}
             >
-              Stylz &apos;n&apos; Smylz
+              Stylz &apos;N&apos; Smylz
             </h1>
           </MotionDiv>
         </div>
@@ -68,7 +69,8 @@ const Hero = () => {
         transition={{ duration: 1 }}
         className="absolute bottom-24 z-30 w-full px-4"
       >
-        <div className="mt-6 px-6 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl text-white text-lg max-w-2xl mx-auto">
+        {/* sub header */}
+        <div className="karla mt-6 px-6 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl text-white text-lg max-w-2xl mx-auto">
           Luxury beauty services: Hair, Nails, Lashes, Wellness & more.
         </div>
 
