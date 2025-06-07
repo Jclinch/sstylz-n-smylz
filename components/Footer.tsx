@@ -14,7 +14,7 @@ const Footer = () => {
           <p className="mb-1">🌸 Stylz &apos;N&apos; Smylz Beauty Salon</p>
           <p className="mb-1">📍 123 Ikota Shopping Complex, Lekki-Epe Expressway, Lagos State.</p>
           <p className="mb-1">📞 (+234) 915 947 6719</p>
-          <p>📧 info@radiantglow.com</p>
+          <p>📧 stlyznsmylz@gmail.com</p>
         </div>
 
         {/* Appointment Button */}
