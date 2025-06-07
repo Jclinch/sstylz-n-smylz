@@ -22,7 +22,7 @@ export default function NavBar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-none shadow-md">
+    <header className="sticky top-0 z-50 w-full bg-none ">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center">
@@ -36,12 +36,12 @@ export default function NavBar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden gap-8 md:flex">
+        <nav className="hidden gap-8 md:flex pt-[-20px]">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-white hover:text-pink-600 transition-colors"
+              className="text-sm font-medium text-white hover:text-[#B779B3] transition-colors"
             >
               {link.name}
             </Link>
@@ -50,9 +50,15 @@ export default function NavBar() {
 
         {/* Book Now Button */}
         <div className="hidden md:block">
-          <Button className="rounded-full bg-pink-600 hover:bg-pink-500 text-white">
-            Book an Appointment
-          </Button>
+          <a
+            href="https://wa.me/2347013327637"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="rounded-full bg-[#93458F] hover:bg-[#B779B3] text-white">
+              Book an Appointment
+            </Button>
+          </a>
         </div>
 
         {/* Mobile Menu Toggle */}

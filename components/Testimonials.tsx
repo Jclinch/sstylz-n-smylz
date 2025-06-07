@@ -9,18 +9,43 @@ import Image from "next/image";
 const testimonials = [
   {
     image: "/clients/client1.jpg",
-    name: "Sophia W.",
+    name: "Chinelo A.",
     quote: "This salon is a dream come true! My skin feels amazing and the staff made me feel pampered every step of the way.",
   },
   {
     image: "/clients/client2.jpg",
-    name: "Isabella K.",
+    name: "Tinu O.",
     quote: "Absolutely love my new look. The team truly listens and brings out your best features!",
   },
   {
     image: "/clients/client3.jpg",
-    name: "Amara B.",
+    name: "Amina S.",
     quote: "Radiant Glow is my new happy place. The vibe, the people, the results — all perfect!",
+  },
+  {
+    image: "/clients/client4.jpg",
+    name: "Ngozi E.",
+    quote: "Professional service and a warm atmosphere. I always leave feeling refreshed and beautiful.",
+  },
+  {
+    image: "/clients/client5.jpg",
+    name: "Eneh N.",
+    quote: "The attention to detail is unmatched. I recommend this salon to all my friends and family.",
+  },
+  {
+    image: "/clients/client6.jpg",
+    name: "Kemi F.",
+    quote: "From the moment I walked in, I felt special. My skin has never looked better!",
+  },
+  {
+    image: "/clients/client7.jpg",
+    name: "Bola I.",
+    quote: "Excellent customer care and amazing results every time. I’m always satisfied.",
+  },
+  {
+    image: "/clients/client8.jpg",
+    name: "Chidera U.",
+    quote: "A truly relaxing experience. The staff are friendly and very skilled at what they do.",
   },
 ];
 
@@ -121,7 +146,7 @@ const Testimonials = () => {
         className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-center relative z-10"
       >
         {/* Rotating frame + Client image */}
-        <div className="relative md:w-[600px] w-[300px] md:h-[600px] h-[300px] flex items-center justify-center">
+        <div className="relative md:w-[300px] w-[300px] md:h-[300px] h-[300px] flex items-center justify-center">
           <div className="absolute inset-0 animate-spin-slow z-0">
             <Image
               src="/images/gold-frame.png"
@@ -130,7 +155,7 @@ const Testimonials = () => {
               className="object-contain"
             />
           </div>
-          <div className="md:w-[420px] w-[210px] md:h-[420px] h-[210px] rounded-full overflow-hidden shadow-2xl relative z-10">
+          <div className="md:w-[210px] w-[210px] md:h-[210px] h-[210px] rounded-full overflow-hidden shadow-2xl relative z-10">
             <Image
               src={testimonial.image}
               alt={testimonial.name}

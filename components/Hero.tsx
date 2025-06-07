@@ -75,13 +75,19 @@ const Hero = () => {
         </div>
 
         <div className="mt-8 text-center">
-          <Button
+            <Button
             size="lg"
             asChild
-            className="bg-white/90 hover:bg-white text-pink-900 hover:text-pink-950 font-semibold shadow-lg rounded-3xl"
-          >
-            <Link href="/booking">Book Now</Link>
-          </Button>
+            className="bg-[#6E226A]/90 text-white hover:bg-[#B779B3] font-semibold shadow-lg rounded-3xl"
+            >
+            <Link
+              href="https://wa.me/2347013327637"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book Now
+            </Link>
+            </Button>
         </div>
       </MotionDiv>
 
