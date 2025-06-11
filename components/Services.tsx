@@ -86,6 +86,7 @@ const moreServices = [
   { name: "Massage Chair", image: "/images/massage-chair.jpg" },
   { name: "Piercing", image: "/images/piercing.jpg" },
   { name: "Semi Permanent lash", image: "/images/lash.jpg" },
+  { name: "Training", image: "/images/training.jpg" },
 ];
 
 const Services = () => {
@@ -213,7 +214,7 @@ const Services = () => {
         </h2>
         <p className="mt-4 text-lg text-gray-600">
           Welcome to Stylz &apos;N&apos; Smylz, your ultimate destination for
-          premium hair and beauty services in Lekki, Ikota, Lagos.
+          premium hair and beauty services in megamound shopping complex ikota, Lagos.
         </p>
       </MotionDiv>
 

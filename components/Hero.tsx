@@ -58,6 +58,22 @@ const Hero = () => {
             >
               Stylz &apos;N&apos; Smylz
             </h1>
+            <div
+              className="italiana text-[2rem] md:text-[3rem] font-black leading-none  tracking-tighter text-transparent bg-clip-text animate-gradient"
+              style={{
+                backgroundImage:
+                  "linear-gradient(270deg, rgba(255,255,255,0.8), rgba(255,255,255,0.4), rgba(255,255,255,0.8))",
+                backgroundSize: "400% 400%",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                textShadow: "0 2px 10px rgba(0,0,0,0.5)",
+                mixBlendMode: "lighten",
+                letterSpacing: "-0.03em",
+                lineHeight: "0.85",
+              }}
+            >
+              Unisex Salon
+            </div>
           </MotionDiv>
         </div>
       </div>
@@ -71,7 +87,7 @@ const Hero = () => {
       >
         {/* sub header */}
         <div className="karla mt-6 px-6 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl text-white text-lg max-w-2xl mx-auto">
-          Luxury beauty services: Hair, Nails, Lashes, Wellness & more.
+          Luxury unisex salon: Hair, Nails, Lashes, Wellness & more.
         </div>
 
         <div className="mt-8 text-center">
