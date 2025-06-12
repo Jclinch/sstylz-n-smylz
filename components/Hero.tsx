@@ -28,7 +28,14 @@ const Hero = () => {
         <div className="relative isolate">
           {/* Glow effect behind text */}
           <div
-            className="absolute inset-0 blur-xl opacity-60"
+            className="absolute inset-0 blur-xl opacity-70 "
+            // style={{
+            //   background:
+            //     "radial-gradient(circle at center, rgba(255,255,255,0.25) 10%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0) 80%)",
+            //   zIndex: -1,
+            // }}
+
+
             style={{
               background:
                 "linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 60%)",
@@ -43,7 +50,7 @@ const Hero = () => {
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
             <h1
-              className="italiana text-[4rem] md:text-[6rem] font-black leading-none  tracking-tighter text-transparent bg-clip-text animate-gradient"
+              className="italiana pt-2 text-[4rem] md:text-[6rem] font-black leading-none  tracking-tighter text-transparent bg-clip-text animate-gradient"
               style={{
                 backgroundImage:
                   "linear-gradient(270deg, rgba(255,255,255,0.8), rgba(255,255,255,0.4), rgba(255,255,255,0.8))",
@@ -91,11 +98,11 @@ const Hero = () => {
         </div>
 
         <div className="mt-8 text-center">
-            <Button
+          <Button
             size="lg"
             asChild
             className="bg-[#6E226A]/90 text-white hover:bg-[#B779B3] font-semibold shadow-lg rounded-3xl"
-            >
+          >
             <Link
               href="https://wa.me/2347013327637"
               target="_blank"
@@ -103,7 +110,7 @@ const Hero = () => {
             >
               Book Now
             </Link>
-            </Button>
+          </Button>
         </div>
       </MotionDiv>
 

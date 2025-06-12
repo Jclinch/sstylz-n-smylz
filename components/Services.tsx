@@ -19,26 +19,6 @@ function biasedRandom(
 }
 
 const PATTERN_COUNT = 6;
-const patterns = Array.from({ length: PATTERN_COUNT }, (_, i) => {
-  const spacing = 100 / (PATTERN_COUNT + 1);
-  const isTop = i < Math.ceil(PATTERN_COUNT * 0.6);
-  return {
-    id: i,
-    size: 80 + Math.random() * 60,
-    top: isTop ? biasedRandom(0, 20, 0.2) : biasedRandom(25, 80, 0.7),
-    left: spacing * (i + 1),
-    color: [
-      "rgba(239,68,68,0.08)",
-      "rgba(34,197,94,0.08)",
-      "rgba(59,130,246,0.08)",
-      "rgba(250,204,21,0.08)",
-      "rgba(168,85,247,0.08)",
-      "rgba(244,63,94,0.08)",
-      "rgba(16,185,129,0.08)",
-    ][i % 7],
-    shape: ["circle", "diamond", "triangle"][i % 3],
-  };
-});
 
 const services = [
   {
@@ -89,6 +69,18 @@ const moreServices = [
   { name: "Training", image: "/images/training.jpg" },
 ];
 
+const patternColors = [
+  "rgba(239,68,68,0.08)",
+  "rgba(34,197,94,0.08)",
+  "rgba(59,130,246,0.08)",
+  "rgba(250,204,21,0.08)",
+  "rgba(168,85,247,0.08)",
+  "rgba(244,63,94,0.08)",
+  "rgba(16,185,129,0.08)",
+];
+
+const patternShapes = ["circle", "diamond", "triangle"];
+
 const Services = () => {
   const { ref: inViewRef, inView: isInView } = useInView({
     triggerOnce: true,
@@ -98,11 +90,38 @@ const Services = () => {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [sectionRect, setSectionRect] = useState<DOMRect | null>(null);
+  type Pattern = {
+    id: number;
+    size: number;
+    top: number;
+    left: number;
+    color: string;
+    shape: string;
+  };
+  const [patterns, setPatterns] = useState<Pattern[]>([]);
 
   function setRefs(node: HTMLElement | null) {
     inViewRef(node);
     sectionRef.current = node;
   }
+
+  useEffect(() => {
+    // Only generate patterns on client to avoid hydration mismatch
+    setPatterns(
+      Array.from({ length: PATTERN_COUNT }, (_, i) => {
+        const spacing = 100 / (PATTERN_COUNT + 1);
+        const isTop = i < Math.ceil(PATTERN_COUNT * 0.6);
+        return {
+          id: i,
+          size: 80 + Math.random() * 60,
+          top: isTop ? biasedRandom(0, 20, 0.2) : biasedRandom(25, 80, 0.7),
+          left: spacing * (i + 1),
+          color: patternColors[i % patternColors.length],
+          shape: patternShapes[i % patternShapes.length],
+        };
+      })
+    );
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -133,6 +152,19 @@ const Services = () => {
         ? (cursorPos.y - sectionRect.top) / sectionRect.height
         : 0.5,
   };
+
+  // 2-2-1 layout positions (relative to center)
+  // Top row: left, right; Middle row: left, right; Bottom: center
+  const circlePositions = [
+    // Top row
+    { x: -110, y: -140 },
+    { x: 110, y: -140 },
+    // Middle row
+    { x: -110, y: 0 },
+    { x: 110, y: 0 },
+    // Bottom center
+    { x: 0, y: 140 },
+  ];
 
   return (
     <section
@@ -212,52 +244,42 @@ const Services = () => {
         <h2 className="italiana text-4xl font-bold tracking-tight">
           Stylz &apos;N&apos; Smylz
         </h2>
+        <h2 className="italiana text-xl font-bold tracking-tight">
+          Unisex Salon{" "}
+        </h2>
         <p className="mt-4 text-lg text-gray-600">
-          Welcome to Stylz &apos;N&apos; Smylz, your ultimate destination for
-          premium hair and beauty services in megamound shopping complex ikota, Lagos.
+          Welcome to Stylz &apos;N&apos; Smylz Unisex Salon, your ultimate
+          destination for premium hair and beauty services in megamound shopping
+          complex ikota, Lagos.
         </p>
       </MotionDiv>
 
       {/* Services Layout */}
       <div className="relative flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto mt-20 gap-10 px-4 z-10">
-        {/* Desktop Circular Layout */}
-        <div className="relative w-[520px] h-[520px] sm:w-[620px] sm:h-[620px] lg:block hidden">
-          <div className="group absolute top-1/2 left-1/2 w-44 h-44 sm:w-52 sm:h-52 bg-red-500 rounded-full overflow-hidden shadow-lg transform -translate-x-1/2 -translate-y-1/2 z-20">
-            <Image
-              src={services[3].image}
-              alt={services[3].title}
-              fill
-              className="object-cover group-hover:scale-110 transition-transform duration-500"
-            />
-            <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-sm font-bold text-white bg-black/60 px-2 py-1 rounded z-10 pointer-events-none">
-              {services[3].title}
-            </span>
-          </div>
-          {[0, 1, 2, 4].map((i, idx) => {
-            const angle = idx * 90 * (Math.PI / 180);
-            const radius = 200;
-            const x = radius * Math.cos(angle);
-            const y = radius * Math.sin(angle);
+        {/* Desktop 2-2-1 Circular Layout */}
+        <div className="relative w-[400px] h-[400px] sm:w-[500px] sm:h-[500px] lg:block hidden">
+          {services.map((service, i) => {
+            const pos = circlePositions[i];
             return (
               <div
                 key={i}
-                className="group absolute w-36 h-36 sm:w-40 sm:h-40 border-4 border-white rounded-full overflow-hidden shadow-md flex items-center justify-center transition-all duration-300"
+                className="group absolute w-[120px] h-[120px] sm:w-[200px] sm:h-[200px] border-4 border-white rounded-full overflow-hidden shadow-md flex items-end justify-center transition-all duration-300"
                 style={{
-                  top: `calc(50% + ${y}px)`,
-                  left: `calc(50% + ${x}px)`,
+                  top: `calc(50% + ${pos.y}px)`,
+                  left: `calc(50% + ${pos.x}px)`,
                   transform: "translate(-50%, -50%)",
                   background: "#fff",
                   zIndex: 10 - i,
                 }}
               >
                 <Image
-                  src={services[i].image}
-                  alt={services[i].title}
+                  src={service.image}
+                  alt={service.title}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs sm:text-sm font-bold text-white bg-black/60 px-2 py-1 rounded z-10 pointer-events-none">
-                  {services[i].title}
+                <span className="absolute bottom-4 text-base sm:text-base font-bold text-white bg-black/60 px-4 py-2 rounded z-10 pointer-events-none text-center w-[85%]">
+                  {service.title}
                 </span>
               </div>
             );
@@ -277,7 +299,7 @@ const Services = () => {
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-500"
               />
-              <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs font-bold text-white bg-black/60 px-2 py-1 rounded z-10 pointer-events-none">
+              <span className="absolute bottom-3 left-4 text-[10px] font-bold text-white bg-black/60 px-2 py-1 rounded z-10 pointer-events-none">
                 {service.title}
               </span>
             </div>

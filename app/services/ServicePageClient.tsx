@@ -9,7 +9,7 @@ import { AiOutlineLeft, AiOutlineRight, AiOutlineClose } from "react-icons/ai";
 const services = [
   "braid", "dreadlock", "manicure", "pedicure", "haircut",
   "ghanaWeaving", "hairTreatment", "weaveOn", "wigInstallation", "wigVentilation",
-  "makeUp", "massageChair", "piercing", "lash",
+  "makeUp", "massageChair", "piercing", "lash", "training"
 ] as const;
 
 type ServiceName = (typeof services)[number];
@@ -89,6 +89,11 @@ const serviceDetails: Record<ServiceName, {
     description: "Fluffy, full, and fabulous – lashes that last and amplify your gaze.",
     details: "Choose from classic, hybrid, or volume sets to define your lash look."
   },
+  "training": {
+    title: "Professional Training",
+    description: "Learn the art and science of beauty with our expert-led training sessions.",
+    details: "We offer hands-on courses in hair styling, braiding, makeup, and more for aspiring professionals and enthusiasts."
+  }
 };
 
 const fadeInUp = {
@@ -119,7 +124,7 @@ export default function ServicePage() {
             Our Services
           </h1>
           <p className="mt-4 text-lg text-gray-200 max-w-2xl">
-            Elevate your beauty experience with our range of luxurious and professional services at Stylz &apos;N&apos; Smylz.
+            Elevate your beauty experience with our range of luxurious and professional services at Stylz &apos;N&apos; Smylz Unisex Salon.
           </p>
         </div>
       </motion.div>

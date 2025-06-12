@@ -56,7 +56,17 @@ function getRandomColor() {
   return `hsla(${hue}, 100%, 85%, ${Math.random() * 0.4 + 0.4})`;
 }
 
-const getRandomPatterns = () =>
+type Pattern = {
+  top: number;
+  left: number;
+  size: number;
+  opacity: number;
+  borderRadius: string;
+  color: string;
+  rotate: number;
+};
+
+const getRandomPatterns = (): Pattern[] =>
   Array.from({ length: PATTERN_COUNT }).map(() => ({
     top: Math.random() * 80 + 5,
     left: Math.random() * 80 + 5,
@@ -71,7 +81,11 @@ const Testimonials = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(sectionRef, { once: true });
 
-  const [patterns] = useState(getRandomPatterns());
+const [patterns, setPatterns] = useState<Pattern[]>([]);
+
+useEffect(() => {
+  setPatterns(getRandomPatterns());
+}, []);
   const [mouse, setMouse] = useState({ x: 50, y: 50 });
 
   const [index, setIndex] = useState(0);

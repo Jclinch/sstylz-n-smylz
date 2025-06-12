@@ -40,7 +40,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom note */}
-      <div className="text-center text-sm text-gray-500 mt-8">
+      <div className="text-center text-sm text-gray-300 mt-8">
         © {new Date().getFullYear()} Stylz &apos;N&apos; Smylz Unisex Salon. All
         rights reserved.
       </div>

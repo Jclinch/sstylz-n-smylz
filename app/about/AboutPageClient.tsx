@@ -37,10 +37,11 @@ const AboutPageClient = () => {
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/50 z-10 flex flex-col items-center justify-center text-center px-4">
           <h1 className="text-white text-4xl md:text-5xl font-bold italiana">
-            About Stylz &apos;N&apos; Smylz
+            About Us
           </h1>
+          
           <p className="mt-4 text-lg text-gray-200 max-w-2xl">
-            At Stylz &apos;N&apos; Smylz, we believe in more than just beauty — we believe in confidence,
+            At Stylz &apos;N&apos; Smylz Unisex Salon, we believe in more than just beauty — we believe in confidence,
             self-expression, and self-care.
           </p>
         </div>
