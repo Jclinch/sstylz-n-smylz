@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
+
 import { AiOutlineLeft, AiOutlineRight, AiOutlineClose } from "react-icons/ai";
 
 const services = [
@@ -105,6 +106,13 @@ export default function ServicePage() {
   return (
     <div>
       {/* Hero */}
+      {/* 
+        To improve page load speed with many images:
+        - Use Next.js <Image> with 'loading="lazy"' for non-critical images.
+        - Only load a few images initially, and load others on scroll or modal open.
+        - Consider using lower-res thumbnails in the grid, and load full-res in modal.
+        - Use webp format if possible for smaller file sizes.
+      */}
       <motion.div
         initial="hidden"
         animate="visible"
