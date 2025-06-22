@@ -16,7 +16,7 @@ const karla = Karla({
 });
 
 export const metadata: Metadata = {
-  title: "Stylz 'N' Smylz",
+  title: "STYLZ N SMYLZ GALLERY UNISEX SALON",
   description: "Your luxury destination for Hair, Nails, Lashes & Wellness",
 };
 

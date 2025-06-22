@@ -79,7 +79,7 @@ const Hero = () => {
                 lineHeight: "0.85",
               }}
             >
-              Unisex Salon
+              Gallery Unisex Salon
             </div>
           </MotionDiv>
         </div>
