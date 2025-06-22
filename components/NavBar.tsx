@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation"; // ← for active route detection
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import clsx from "clsx"; // if not installed: npm install clsx
+import clsx from "clsx";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -18,6 +19,7 @@ const navLinks = [
 export default function NavBar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname(); // ← Get current route
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,21 +45,26 @@ export default function NavBar() {
             alt="Stylz 'n' Smylz Logo"
             width={60}
             height={50}
-            className=""
           />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden gap-8 md:flex pt-[-20px]">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-white hover:text-[#B779B3] transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
+        <nav className="hidden gap-8 md:flex">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+                <Link
+                key={link.name}
+                href={link.href}
+                className="relative text-sm font-medium text-white hover:text-[#B779B3] transition-colors"
+                >
+                {isActive && (
+                  <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-[#D4B16D] opacity-50 rounded-full pointer-events-none z-[-1]" />
+                )}
+                {link.name}
+                </Link>
+            );
+          })}
         </nav>
 
         {/* Book Now Button */}
@@ -101,8 +108,14 @@ export default function NavBar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-sm font-medium text-gray-700 hover:text-[#B779B3]"
+                  className={clsx(
+                    "relative text-sm font-medium text-gray-700 hover:text-[#B779B3]",
+                    pathname === link.href && "text-[#93458F]"
+                  )}
                 >
+                  {pathname === link.href && (
+                    <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-purple-500 opacity-40 rounded-full pointer-events-none z-[-1]" />
+                  )}
                   {link.name}
                 </Link>
               ))}
