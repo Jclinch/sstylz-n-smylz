@@ -53,16 +53,16 @@ export default function NavBar() {
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
-                <Link
+              <Link
                 key={link.name}
                 href={link.href}
                 className="relative text-sm font-medium text-white hover:text-[#B779B3] transition-colors"
-                >
+              >
                 {isActive && (
                   <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-[#D4B16D] opacity-50 rounded-full pointer-events-none z-[-1]" />
                 )}
                 {link.name}
-                </Link>
+              </Link>
             );
           })}
         </nav>
@@ -97,28 +97,29 @@ export default function NavBar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.nav
-            initial={{ height: 0 }}
-            animate={{ height: "auto" }}
-            exit={{ height: 0 }}
-            className="overflow-hidden bg-white shadow-md md:hidden"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute top-full left-0 w-full bg-black/90 text-white md:hidden z-50"
           >
-            <div className="flex flex-col space-y-4 px-6 py-4">
+            <div className="flex flex-col items-end space-y-4 px-6 py-4 text-right">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
                   className={clsx(
-                    "relative text-sm font-medium text-gray-700 hover:text-[#B779B3]",
+                    "relative text-sm font-medium text-white hover:text-[#B779B3]",
                     pathname === link.href && "text-[#93458F]"
                   )}
                 >
                   {pathname === link.href && (
-                    <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-purple-500 opacity-40 rounded-full pointer-events-none z-[-1]" />
+                    <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-[#D4B16D] opacity-40 rounded-full pointer-events-none z-[-1]" />
                   )}
                   {link.name}
                 </Link>
               ))}
+
               <Button className="w-full rounded-full bg-[#93458F] text-white hover:bg-[#B779B3]">
                 Book an Appointment
               </Button>
