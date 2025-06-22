@@ -524,7 +524,7 @@ const ServiceBlock = ({ name, idx }: { name: ServiceName; idx: number }) => {
       </div>
 
       <div className="md:w-1/2 rounded-xl shadow-lg border p-2">
-        <div className="grid grid-cols-3 gap-3 h-[340px] overflow-y-auto pr-1">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 h-auto md:h-[340px] overflow-y-auto pr-1">
           {Array.from({ length: 10 }).map((_, i) => (
             <Image
               key={i}
@@ -532,7 +532,7 @@ const ServiceBlock = ({ name, idx }: { name: ServiceName; idx: number }) => {
               alt={`${info.title} image ${i + 1}`}
               width={200}
               height={200}
-              className="w-[160px] h-[160px] object-cover rounded cursor-pointer mx-auto"
+              className="w-full h-[140px] md:w-[160px] md:h-[160px] object-cover rounded cursor-pointer mx-auto"
               onClick={() => {
                 setCurrentImage(i);
                 setModalOpen(true);
