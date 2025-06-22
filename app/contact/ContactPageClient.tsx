@@ -165,7 +165,7 @@ export default function ContactPageClient() {
           {/* WhatsApp Modal Trigger */}
           <button
             onClick={() => setShowWhatsAppModal(true)}
-            className="flex items-center gap-4 p-6 rounded-xl shadow-md bg-[#93458F] hover:bg-[#B779B3] text-white transition w-full text-left"
+            className="flex items-center gap-4 p-6 rounded-xl shadow-md bg-[#93458F] hover:bg-[#B779B3] text-white transition w-full text-left cursor-pointer"
           >
             <div className="bg-white text-[#93458F] rounded-full p-2">
               <FaWhatsapp size={28} />
@@ -178,8 +178,9 @@ export default function ContactPageClient() {
           </button>
 
           <Link
-            href="https://instagram.com/stylznsmylz"
+            href="https://instagram.com/stylz.smylz"
             target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-4 p-6 rounded-xl shadow-md bg-[#93458F] hover:bg-[#B779B3] text-white transition"
           >
             <div className="bg-white text-[#93458F] rounded-full p-2">
@@ -187,12 +188,14 @@ export default function ContactPageClient() {
             </div>
             <div>
               <h3 className="text-lg font-semibold">Instagram</h3>
-              <p>@stylznsmylz</p>
+              <p>@stylz.smylz</p>
             </div>
           </Link>
 
           <a
             href="mailto:info@stylznsmylz.com"
+                        target="_blank"
+            rel="noopener noreferrer" 
             className="flex items-center gap-4 p-6 rounded-xl shadow-md bg-[#93458F] hover:bg-[#B779B3] text-white transition"
           >
             <div className="bg-white text-[#93458F] rounded-full p-2">
@@ -249,10 +252,10 @@ export default function ContactPageClient() {
         <div className="fixed inset-0 z-[999] bg-black/60 flex justify-center items-center">
           <div className="bg-white p-6 rounded-lg max-w-sm w-full text-center space-y-4 shadow-xl">
             <h2 className="text-lg font-bold">Choose WhatsApp Number</h2>
-            <button className="block w-full bg-green-600 text-white py-2 rounded pointer" onClick={() => openWhatsApp("+2347013327637")}>
+            <button className="block w-full bg-green-600 text-white py-2 rounded cursor-pointer" onClick={() => openWhatsApp("+2347013327637")}>
               Chat: +234 701 332 7637
             </button>
-            <button className="block w-full bg-green-600 text-white py-2 rounded pointer" onClick={() => openWhatsApp("+2349159476719")}>
+            <button className="block w-full bg-green-600 text-white py-2 rounded cursor-pointer " onClick={() => openWhatsApp("+2349159476719")}>
               Chat: +234 915 947 6719
             </button>
             <button className="text-sm text-gray-600 underline mt-2" onClick={() => setShowWhatsAppModal(false)}>
@@ -267,10 +270,10 @@ export default function ContactPageClient() {
         <div className="fixed inset-0 z-[999] bg-black/60 flex justify-center items-center">
           <div className="bg-white p-6 rounded-lg max-w-sm w-full text-center space-y-4 shadow-xl">
             <h2 className="text-lg font-bold">Choose Number to Call</h2>
-            <button className="block w-full bg-[#93458F] text-white py-2 rounded pointer" onClick={() => callPhone("+2349159476719")}>
+            <button className="block w-full bg-[#93458F] text-white py-2 rounded cursor-pointer" onClick={() => callPhone("+2349159476719")}>
               Call: +234 915 947 6719
             </button>
-            <button className="block w-full bg-[#93458F] text-white py-2 rounded pointer" onClick={() => callPhone("+2347013327637")}>
+            <button className="block w-full bg-[#93458F] text-white py-2 rounded cursor-pointer" onClick={() => callPhone("+2347013327637")}>
               Call: +234 701 332 7637
             </button>
             <button className="text-sm text-gray-600 underline mt-2" onClick={() => setShowPhoneModal(false)}>
